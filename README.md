@@ -1,2 +1,2 @@
-# BattleTank
-Udemy [UnrealCourse](https://www.udemy.com/unrealcourse), section 4. An open-world tank battle simulator with simple AI, terrain and advanced control systems.
+# WGJ90
+My game on UE4 for the Weekly Game Jam 90: https://itch.io/jam/weekly-game-jam-90

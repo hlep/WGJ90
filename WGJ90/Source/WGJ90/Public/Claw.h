@@ -27,7 +27,7 @@ public:
 	void MoveUp(float Input);
 
 	UFUNCTION(BlueprintCallable, Category = "Setup")
-	void Initialize(UPhysicsHandleComponent* HandleComponentToSet);
+	void Initialize(USceneComponent* GrabLocationToSet);
 
 protected:
 	// Called when the game starts or when spawned
@@ -41,5 +41,7 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 private:
-	UPhysicsHandleComponent* HandleComponent = nullptr;
+
+	USceneComponent* GrabLocation = nullptr;
+
 };

@@ -2,6 +2,7 @@
 
 #include "Claw.h"
 #include "../Public/Claw.h"
+#include "PhysicsEngine/PhysicsHandleComponent.h"
 
 
 // Sets default values
@@ -40,21 +41,18 @@ void AClaw::Grab()
 
 void AClaw::MoveRight(float Input)
 {
-	UE_LOG(LogTemp, Warning, TEXT("Moving right: %f"), Input);
 	FMath::Clamp<float>(Input, -1, 1);
 	AddMovementInput(GetActorForwardVector(), Input);
 }
 
 void AClaw::MoveUp(float Input)
 {
-	UE_LOG(LogTemp, Warning, TEXT("Moving up: %f"), Input);
-	UE_LOG(LogTemp, Warning, TEXT("Moving right: %f"), Input);
 	FMath::Clamp<float>(Input, -1, 1);
 	AddMovementInput(FVector::UpVector, Input);
 }
 
-void AClaw::Initialize(UPhysicsHandleComponent * HandleComponentToSet)
+void AClaw::Initialize(USceneComponent* GrabLocationToSet)
 {
-	HandleComponent = HandleComponentToSet;
+	GrabLocation = GrabLocationToSet;
 }
 
