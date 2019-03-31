@@ -53,3 +53,8 @@ void AClaw::MoveUp(float Input)
 	AddMovementInput(FVector::UpVector, Input);
 }
 
+void AClaw::Initialize(UPhysicsHandleComponent * HandleComponentToSet)
+{
+	HandleComponent = HandleComponentToSet;
+}
+

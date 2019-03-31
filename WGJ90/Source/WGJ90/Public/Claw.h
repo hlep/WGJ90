@@ -6,6 +6,8 @@
 #include "GameFramework/Pawn.h"
 #include "Claw.generated.h"
 
+class UPhysicsHandleComponent;
+
 UCLASS()
 class WGJ90_API AClaw : public APawn
 {
@@ -24,6 +26,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Input")
 	void MoveUp(float Input);
 
+	UFUNCTION(BlueprintCallable, Category = "Setup")
+	void Initialize(UPhysicsHandleComponent* HandleComponentToSet);
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -35,4 +40,6 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+private:
+	UPhysicsHandleComponent* HandleComponent = nullptr;
 };
