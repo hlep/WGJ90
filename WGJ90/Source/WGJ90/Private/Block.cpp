@@ -1,6 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "Block.h"
+#include "../Public/Block.h"
 
 
 // Sets default values
@@ -22,6 +23,26 @@ void ABlock::BeginPlay()
 void ABlock::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
+	if (IsInstalling)
+	{
+		if ((GetWorld()->GetTimeSeconds()) - InstallTime > 5.0) 
+		{
+			IsInstalled = true;
+		}
+	}
 }
 
+//this architecture looks awful
+
+void ABlock::StartInstalling()
+{
+	InstallTime = GetWorld()->GetTimeSeconds();
+	IsInstalling = true;
+}
+
+void ABlock::InstallingBroken()
+{
+	InstallTime = 0;
+	IsInstalling = false;
+	IsInstalled = false;
+}
