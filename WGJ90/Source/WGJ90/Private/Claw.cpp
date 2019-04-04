@@ -36,7 +36,6 @@ void AClaw::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 
 void AClaw::Grab()
 {
-	UE_LOG(LogTemp, Warning, TEXT("DONKEY: Grab grab!"));
 }
 
 void AClaw::MoveRight(float Input)
